@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserModelMapper">
+
+	<resultMap id="UserModel" type="com.job.admin.user.model.UserModel">
+		<result column="id" property="id" />
+		<result column="user_name" property="userName" />
+		<result column="user_password" property="userPassword" />
+		<result column="state" property="state" />
+		<result column="remark" property="remark" />
+		<result column="sex" property="sex" />
+		<result column="phoneNumber" property="phone_number" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		t.id,
+		t.user_name,
+		t.user_password,
+		t.state,
+		t.sex,
+		t.remark,
+		t.phone_number
+	</sql>
+
+	<select id="getUserModel" parameterType="com.job.admin.user.model.UserModel"
+		resultMap="UserModel">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM JOB_USER_INFO AS t where 1=1
+		<if test="null!=userName and ''!=userName">
+			and user_name like CONCAT('%',#{userName},'%' )
+		</if>
+		<if test="null!=userPassword and ''!=userPassword">
+			and user_password=#{userPassword}
+		</if>
+		ORDER BY t.id ASC
+	</select>
+
+	<select id="getUserModelByNameAndPass" parameterType="com.job.admin.user.model.UserModel" resultMap="UserModel">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM JOB_USER_INFO AS t 
+		where user_name=#{userName}
+		and user_password=#{userPassword}
+	</select>
+</mapper>

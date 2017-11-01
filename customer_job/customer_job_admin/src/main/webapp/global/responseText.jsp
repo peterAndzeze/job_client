@@ -1,0 +1,1 @@
+<%@ include file="/common/taglibs.jsp"%><c:out value="${result}" escapeXml="false" />

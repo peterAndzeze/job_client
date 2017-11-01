@@ -1,0 +1,285 @@
+@charset "utf-8";
+/* CSS Document */
+.app_mgr{
+	background-image:
+		url("../script/extjs/icons/building_edit.png") !important;
+}
+
+.blogout {
+	background-image:
+		url("../script/extjs/icons/exclamation.png") !important;
+}
+
+.bsystem {
+	background-image:
+		url("../script/extjs/icons/cog.png") !important;
+}
+	
+.bmoney_yen {
+	background-image:
+		url("../script/extjs/icons/money_yen.png") !important;
+}
+	
+.bmoney {
+	background-image:
+		url("../script/extjs/icons/money.png") !important;
+}
+	
+.bgroup {
+	background-image:
+		url("../script/extjs/icons/group.png") !important;
+}
+
+
+.digital_apply{
+	background-image:
+		url("../script/extjs/icons/layout_edit.png") !important;
+}
+
+.digital_undo_apply{
+	background-image:
+		url("../script/extjs/icons/feed_edit.png") !important;
+}
+	
+.bapp_mgr{
+	background-image:
+		url("../script/extjs/icons/application_form_magnify.png") !important;
+}
+
+.bapp_edit {
+	background-image:
+		url("../script/extjs/icons/application_form_edit.png") !important;
+}
+
+.bvcard_delete{
+	background-image:
+		url("../script/extjs/icons/vcard_delete.png") !important;
+}
+	
+.btext_num{
+	background-image:
+		url("../script/extjs/icons/text_list_numbers.png") !important;
+}
+
+.bcoins {
+	background-image:
+		url("../script/extjs/icons/coins.png") !important;
+}
+
+.bcoins_add {
+	background-image:
+		url("../script/extjs/icons/coins_add.png") !important;
+}
+
+.coins_delete {
+	background-image:
+		url("../script/extjs/icons/coins_delete.png") !important;
+}
+	
+.bcoins_delete {
+	background-image:
+		url("../script/extjs/icons/coins_delete.png") !important;
+}
+
+.breport{
+	background-image:
+		url("../script/extjs/icons/report.png") !important;
+}
+	
+.btime{
+	background-image:
+		url("../script/extjs/icons/time.png") !important;
+}
+	
+.bdate_edit {
+	background-image:
+		url("../script/extjs/icons/date_edit.png") !important;
+}
+	
+.bmoney_dollar {
+	background-image:
+		url("../script/extjs/icons/money_dollar.png") !important;
+}
+
+.bmoney_euro {
+	background-image:
+		url("../script/extjs/icons/money_euro.png") !important;
+}
+
+.barrow_out {
+	background-image:
+		url("../script/extjs/icons/arrow_out.png") !important;
+}
+
+.barrow_in_gray {
+	background-image:
+		url("../script/extjs/icons/arrow_in_gray.png") !important;
+}
+
+.badd {
+	background-image:
+		url("../script/extjs/icons/fam/add.gif") !important;
+}
+
+.bpencil {
+	background-image:
+		url("../script/extjs/icons/pencil.png") !important;
+}
+
+.bdelete {
+	background-image:
+		url("../script/extjs/icons/delete.gif") !important;
+}
+
+.bsearch {
+	background-image:url(../script/extjs/icons/magnifier.png) !important;
+	background-repeat:no-repeat;
+}
+
+.badvsearch {
+	background-image:
+		url("../script/extjs/icons/shield.png") !important;
+}
+
+.bcomputer_edit {
+	background-image:
+		url("../script/extjs/icons/computer_edit.png") !important;
+}
+
+.bapplication_delete {
+	background-image:
+		url("../script/extjs/icons/application_delete.png") !important;
+}
+
+.bbook {
+	background-image:
+		url("../script/extjs/icons/book.png") !important;
+}
+
+.brefresh {
+	background-image:
+		url("../script/extjs/icons/arrow_refresh.png") !important;
+}
+
+.bcross {
+	background-image:
+		url("../script/extjs/icons/cross.png") !important;
+}
+	
+.barrow_undo {
+	background-image:
+		url("../script/extjs/icons/arrow_undo.png") !important;
+}
+
+.buser {
+	background-image:
+		url("../script/extjs/icons/user.png") !important;
+}
+	
+.btable_multiple{
+	background-image:
+		url("../script/extjs/icons/table_multiple.png") !important;
+}
+
+.bnote{
+	background-image:
+		url("../script/extjs/icons/note.png") !important;
+}
+
+.bgrid{
+	background-image:
+		url("../script/extjs/icons/grid.png") !important;
+}
+
+.bscript{
+	background-image:
+		url("../script/extjs/icons/script.png") !important;
+}
+
+.bfolder_delete{
+	background-image:
+		url("../script/extjs/icons/folder_delete.png") !important;
+}
+
+.bcopy{
+	background-image:
+		url("../script/extjs/icons/copy.png") !important;
+}
+
+.bpaste{
+	background-image:
+		url("../script/extjs/icons/paste.png") !important;
+}
+
+.blist{
+	background-image:
+		url("../script/extjs/icons/list.png") !important;
+}
+
+.block{
+	background-image:
+		url("../script/extjs/icons/lock.png") !important;
+}
+
+.bunlock{
+	background-image:
+		url("../script/extjs/icons/lock_open.png") !important;
+}
+
+.bfile{
+	background-image:
+		url("../script/extjs/icons/file.png") !important;
+}
+	
+.bzip_download{
+	background-image:
+		url("../script/extjs/icons/zip_download.png") !important;
+}
+
+.bnote_edit{
+	background-image:
+		url("../script/extjs/icons/note_edit.png") !important;
+}
+
+.bbook_open{
+	background-image:
+		url("../script/extjs/icons/book_open.png") !important;	
+}
+
+.bemail_go{
+	background-image:
+		url("../script/extjs/icons/email_go.png") !important;	
+}
+
+.bemail{
+	background-image:
+		url("../script/extjs/icons/email.png") !important;	
+}
+	
+.btext_list_bullets{
+	background-image:
+		url("../script/extjs/icons/text_list_bullets.png") !important;	
+}
+	
+.btransfer{
+	background-image:
+		url("../script/extjs/icons/transfer.png") !important;	
+}
+
+.btransfer_app{
+	background-image:
+		url("../script/extjs/icons/table_refresh.png") !important;	
+}
+
+.bhistory_ncerdit{
+	background-image:
+		url("../script/extjs/icons/table_refresh.png") !important;	
+}
+.bschema{
+	background-image:
+		url("../script/extjs/icons/report_key.png") !important;
+}
+.bschema_add{
+	background-image:
+		url("../script/extjs/icons/add.png") !important;
+}

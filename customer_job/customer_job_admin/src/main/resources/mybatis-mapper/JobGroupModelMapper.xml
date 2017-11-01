@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="JobGroupModelMapper">
+
+	<resultMap id="JobGroupModel" type="com.job.admin.jobGroup.model.JobGroupModel">
+		<result column="id" property="id" />
+		<result column="app_name" property="appName" />
+		<result column="title" property="title" />
+		<result column="order" property="order" />
+		<result column="address_type" property="addressType" />
+		<result column="address_list" property="addressList" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		t.id,
+        t.app_name,
+        t.title,
+        t.order,
+        t.address_type,
+        t.address_list
+	</sql>
+
+	<select id="queryPage" parameterType="java.util.HashMap" resultMap="JobGroupModel">
+		SELECT
+		<include refid="Base_Column_List" />
+		FROM JOB_QRTZ_TRIGGER_GROUP AS t where 1=1
+		<if test="null!=appName and ''!=appName">
+			and t.app_name like CONCAT('%',#{appName},'%')  
+		</if>
+		limit #{start},#{limit}
+	</select>
+	
+	<select id="count" parameterType="java.util.HashMap" resultType="java.lang.Integer">
+        SELECT count(1) FROM JOB_QRTZ_TRIGGER_GROUP AS t where 1=1
+        <if test="null!=appName and ''!=appName">
+            and t.app_name like CONCAT('%',#{appName},'%')
+        </if>
+    </select>
+    
+    <select id="queryJobGoupDetail" parameterType="com.job.admin.jobGroup.model.JobGroupModel" resultMap="JobGroupModel">
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM JOB_QRTZ_TRIGGER_GROUP AS t where 1=1
+        <if test="null!=id">
+            and id=#{id}
+        </if>
+        <if test="null!=appName and ''!=appName">
+            and t.app_name=#{appName}
+        </if>
+    </select>
+    
+    
+    
+    
+    <update id="updateJobGroup" parameterType="com.job.admin.jobGroup.model.JobGroupModel">
+        update  JOB_QRTZ_TRIGGER_GROUP g
+        
+        set g.version =g.version+1
+        <if test="null!=title and ''!=title">
+            ,g.title=#{title}
+        </if> 
+        <if test="null!=appName and ''!=appName">
+            ,g.app_name=#{appName}
+        </if>
+        <if test="null!=order and ''!=order">
+            ,g.order=#{order}
+        </if>
+        <if test="null!=addressType and ''!=addressType">
+            ,g.address_type=#{addressType}
+        </if>
+        <if test="null!=addressList and ''!=addressList">
+            ,g.address_list =#{addressList}
+        </if>
+        where id=#{id}
+    </update>
+    
+    <update id="insertJobGroup" parameterType="com.job.admin.jobGroup.model.JobGroupModel">
+        INSERT INTO  JOB_QRTZ_TRIGGER_GROUP (APP_NAME,TITLE,`ORDER`,ADDRESS_TYPE,ADDRESS_LIST,VERSION) values(#{appName},#{title},#{order},#{addressType},#{addressList},'0')
+    </update>
+    
+    <delete id="deleteJobGroup" parameterType="com.job.admin.jobGroup.model.JobGroupModel">
+        delete from JOB_QRTZ_TRIGGER_GROUP where id=#{id}
+    </delete>
+    
+    
+    <select id="jobGroups" resultMap="JobGroupModel">
+        select id as id,app_name as appName from JOB_QRTZ_TRIGGER_GROUP;    
+    
+    </select>
+    <select id="findByAddressType" parameterType="java.lang.Integer" resultMap="JobGroupModel">
+        SELECT <include refid="Base_Column_List" />
+        FROM JOB_QRTZ_TRIGGER_GROUP AS t
+        WHERE t.address_type = #{addressType}
+        ORDER BY t.order ASC
+    </select>
+    
+</mapper>

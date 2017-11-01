@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="DictionaryMapper">
+	
+	<resultMap id="Dictionary" type="com.job.admin.dictionary.model.DictionaryInfoModel" >
+		<result column="id" property="id" />
+		<result column="key" property="key" />
+		<result column="display" property="display" />
+
+		<result column="value" property="value" />
+
+		<result column="value1" property="value1" />
+		<result column="state" property="state" />
+	    <result column="remark" property="remark" />
+	    
+	    <result column="creator" property="creator" />
+	    <result column="create_time" property="createTime" />
+	    <result column="operator" property="operator" />
+	    
+	    <result column="modify_time" property="modifyTime" />
+	    <result column="parent_id" property="parentId" />
+	     <result column="is_leaf" property="isLeaf" />
+	</resultMap>
+
+		<sql id="Base_Column_List">
+			t.id,
+			t.key,
+			t.display,
+			t.value,
+			t.value1,
+			t.state,
+			t.remark,
+			t.creator,
+			t.create_time,
+			t.operator,
+			t.modify_time,
+			t.parent_id,
+			t.is_leaf
+		</sql>
+	
+	<select id="pageList" parameterType="java.util.HashMap"  resultMap="Dictionary">
+		SELECT  <include refid="Base_Column_List" />
+		FROM JOB_DICTIONAY AS t where 1=1
+			<if test="null!=id ">
+				    AND t.id = #{id}
+			</if>
+			<if test="null!=parentId ">
+                AND t.parent_id = #{parentId}
+            </if>
+		order by id desc limit #{start}, #{limit}
+	</select>
+	
+	<select id="list" parameterType="java.util.HashMap" resultMap="Dictionary">
+	SELECT
+	<include refid="Base_Column_List" />
+	FROM JOB_DICTIONAY AS t where 1=1
+	<if test="null!=id">
+		AND t.id = #{id}
+	</if>
+	<if test="null!=parentId ">
+		AND t.parent_id = #{parentId}
+	</if>
+</select>
+	
+	<select id="pageListCount" parameterType="java.util.HashMap" resultType="int">
+		SELECT count(1)
+		FROM JOB_DICTIONAY AS t where 1=1
+			<if test="null!=id">
+                AND t.id = #{id}
+            </if>
+            <if test="null!=parentId">
+                AND t.parent_id = #{parentId}
+            </if>
+	</select>
+	
+	<select id="info" parameterType="java.util.HashMap" resultMap="Dictionary">
+		SELECT <include refid="Base_Column_List" />
+		FROM JOB_DICTIONAY AS t
+		WHERE t.id = #{id}
+	</select>
+	<insert id="save" parameterType="com.job.admin.dictionary.model.DictionaryInfoModel" keyProperty="id" >
+		INSERT INTO JOB_DICTIONAY (
+		     `key`,
+			`display`,
+			`value`,
+			`value1`,
+			`state`,
+			`remark`,
+			`creator`,
+            `create_time`,
+            `operator`,
+            `modify_time`,
+            `parent_id`,
+            `is_leaf`
+		) VALUES (
+		      #{key},
+		      #{display},
+		      #{value},
+		      #{value1},
+		      #{state},
+		      #{remark},
+		      #{creator},
+		      SYSDATE(),
+		      #{operator},
+		      SYSDATE(),
+		      #{parentId},
+		      #{isLeaf}
+		);
+	</insert>
+    
+	
+	<update id="update" parameterType="com.job.admin.dictionary.model.DictionaryInfoModel">
+		UPDATE JOB_DICTIONAY
+		SET modify_time=SYSDATE()
+		<if test="null!=key and ''!=key">
+			,`key`= #{key}
+		</if>
+		<if test="null !=value">
+			,`value`= #{value}
+		</if>
+		<if test="null !=value1">
+            ,`value1`= #{value1}
+        </if>
+		<if test="null !=remark and ''!=remark">
+            ,`remark`= #{remark}
+        </if>
+        <if test="null !=state">
+            ,`state`= #{state}
+        </if>
+        <if test="null !=isLeaf">
+            ,`is_leaf`= #{isLeaf}
+        </if>
+        <if test="null !=creator and ''!=creator">
+            ,`creator`= #{creator}
+        </if>
+        <if test="null !=operator and ''!=operator">
+            ,`operator`= #{operator}
+        </if>
+		WHERE `id`= #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from JOB_DICTIONAY
+		WHERE id = #{id}
+	</delete>
+
+</mapper>
