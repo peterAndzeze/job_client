@@ -39,7 +39,7 @@ public class JobTrigger {
     public static void trigger(Long jobId) {
 
         // load data
-        JobInfoModel jobInfo = JobDynamicScheduler.jobDao.queryJobById(jobId);              // job info
+        JobInfoModel jobInfo = JobDynamicScheduler.jobDao.queryJobById(jobId);// job info
         JobGroupModel group = JobDynamicScheduler.jobGroupDao.queryJobGoupById(jobInfo.getJobGroup());  // group info
 
         ExecutorBlockStrategyEnum blockStrategy = ExecutorBlockStrategyEnum.match(jobInfo.getExecutorBlockStrategy(), ExecutorBlockStrategyEnum.SERIAL_EXECUTION);  // block strategy

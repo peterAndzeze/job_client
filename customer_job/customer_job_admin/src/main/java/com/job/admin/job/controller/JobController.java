@@ -176,7 +176,7 @@ public class JobController extends BaseController{
 	    jobLogGlue.setJobId(Integer.valueOf(model.getId().toString()));
 	    jobLogGlue.setGlueType(model.getGlueType());
 	    jobLogGlue.setGlueSource(model.getGlueSource());
-	    jobLogGlue.setGlueRemark(model.getGlueRemark()==null?model.getId()+model.getCreator():model.getGlueRemark());
+	    jobLogGlue.setGlueRemark(jobInfoModel.getGlueRemark()==null?model.getGlueRemark():jobInfoModel.getGlueRemark());
 	    jobLogGlueDao.save(jobLogGlue);
 	    // remove code backup more than 30
 	    jobLogGlueDao.removeOld(model.getId(), 30);

@@ -1,0 +1,5 @@
+2017-11-02 0824:59:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 0824:59:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+

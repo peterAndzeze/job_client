@@ -10,6 +10,7 @@
         <module>customer_job_admin</module>
         <module>customer_util</module>
         <module>logjob</module>
+        <module>jobclient</module>
     </modules>
     <properties>
         <javax.servlet-api.version>3.0.1</javax.servlet-api.version>

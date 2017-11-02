@@ -1,0 +1,2 @@
+2017-11-02 0924:32:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 0924:32:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293

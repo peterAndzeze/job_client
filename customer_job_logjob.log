@@ -1,0 +1,874 @@
+2017-11-02 09:12:52 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[305]-[INFO] Root WebApplicationContext: initialization started
+2017-11-02 09:12:52 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[prepareRefresh]-[578]-[INFO] Refreshing Root WebApplicationContext: startup date [Thu Nov 02 09:12:52 CST 2017]; root of context hierarchy
+2017-11-02 09:12:52 customer_job_logjob [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]-[localhost-startStop-1]-[loadBeanDefinitions]-[317]-[INFO] Loading XML bean definitions from file [/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/applicationcontext-job.xml]
+2017-11-02 09:12:53 customer_job_logjob [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]-[localhost-startStop-1]-[loadProperties]-[172]-[INFO] Loading properties file from URL [file:/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/job-executor.properties]
+2017-11-02 09:12:53 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[356]-[ERROR] Context initialization failed
+java.lang.NoClassDefFoundError: org/quartz/SchedulerException
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:612)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:524)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:510)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1069)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1042)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4842)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5303)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:587)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1798)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: org.quartz.SchedulerException
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1332)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1166)
+	... 34 more
+2017-11-02 09:12:54 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[doClose]-[960]-[INFO] Closing Root WebApplicationContext: startup date [Thu Nov 02 09:12:52 CST 2017]; root of context hierarchy
+2017-11-02 09:12:54 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[doClose]-[978]-[WARN] Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Thu Nov 02 09:12:52 CST 2017]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:415)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:934)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:581)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:116)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4889)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5526)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:159)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:587)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1798)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-02 10:01:04 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[305]-[INFO] Root WebApplicationContext: initialization started
+2017-11-02 10:01:04 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[prepareRefresh]-[578]-[INFO] Refreshing Root WebApplicationContext: startup date [Thu Nov 02 10:01:04 CST 2017]; root of context hierarchy
+2017-11-02 10:01:04 customer_job_logjob [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]-[localhost-startStop-1]-[loadBeanDefinitions]-[317]-[INFO] Loading XML bean definitions from file [/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/applicationcontext-job.xml]
+2017-11-02 10:01:05 customer_job_logjob [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]-[localhost-startStop-1]-[loadProperties]-[172]-[INFO] Loading properties file from URL [file:/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/job-executor.properties]
+2017-11-02 10:01:05 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[356]-[ERROR] Context initialization failed
+java.lang.NoClassDefFoundError: org/quartz/SchedulerException
+	at java.lang.Class.getDeclaredMethods0(Native Method)
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2701)
+	at java.lang.Class.getDeclaredMethods(Class.java:1975)
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:612)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:524)
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:510)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:241)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1069)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1042)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:510)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:772)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:839)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:538)
+	at org.springframework.web.context.ContextLoader.configureAndRefreshWebApplicationContext(ContextLoader.java:444)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:326)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:107)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4842)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5303)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:147)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:587)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1798)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.ClassNotFoundException: org.quartz.SchedulerException
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1332)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1166)
+	... 34 more
+2017-11-02 10:01:06 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[doClose]-[960]-[INFO] Closing Root WebApplicationContext: startup date [Thu Nov 02 10:01:04 CST 2017]; root of context hierarchy
+2017-11-02 10:01:06 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[doClose]-[978]-[WARN] Exception thrown from LifecycleProcessor on context close
+java.lang.IllegalStateException: LifecycleProcessor not initialized - call 'refresh' before invoking lifecycle methods via the context: Root WebApplicationContext: startup date [Thu Nov 02 10:01:04 CST 2017]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getLifecycleProcessor(AbstractApplicationContext.java:415)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:975)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:934)
+	at org.springframework.web.context.ContextLoader.closeWebApplicationContext(ContextLoader.java:581)
+	at org.springframework.web.context.ContextLoaderListener.contextDestroyed(ContextLoaderListener.java:116)
+	at org.apache.catalina.core.StandardContext.listenerStop(StandardContext.java:4889)
+	at org.apache.catalina.core.StandardContext.stopInternal(StandardContext.java:5526)
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:224)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:159)
+	at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:725)
+	at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:701)
+	at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:717)
+	at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:587)
+	at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1798)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-02 10:10:10 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[305]-[INFO] Root WebApplicationContext: initialization started
+2017-11-02 10:10:10 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[prepareRefresh]-[578]-[INFO] Refreshing Root WebApplicationContext: startup date [Thu Nov 02 10:10:10 CST 2017]; root of context hierarchy
+2017-11-02 10:10:11 customer_job_logjob [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]-[localhost-startStop-1]-[loadBeanDefinitions]-[317]-[INFO] Loading XML bean definitions from file [/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/applicationcontext-job.xml]
+2017-11-02 10:10:11 customer_job_logjob [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]-[localhost-startStop-1]-[loadProperties]-[172]-[INFO] Loading properties file from URL [file:/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/job-executor.properties]
+2017-11-02 10:10:12 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 10:10:12 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[registJobHandler]-[155]-[INFO] customer-job register jobhandler success, name:testJobHandler, jobHandler:com.job.TestJobHandler@e699a72
+2017-11-02 10:10:12 customer_job_logjob [org.eclipse.jetty.util.log]-[Thread-3]-[initialized]-[186]-[INFO] Logging initialized @5784ms
+2017-11-02 10:10:12 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[345]-[INFO] Root WebApplicationContext: initialization completed in 1888 ms
+2017-11-02 10:10:12 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-3]-[doStart]-[327]-[INFO] jetty-9.2.22.v20170606
+2017-11-02 10:10:12 customer_job_logjob [org.eclipse.jetty.server.ServerConnector]-[Thread-3]-[doStart]-[266]-[INFO] Started ServerConnector@10daa6d{HTTP/1.1}{0.0.0.0:9998}
+2017-11-02 10:10:12 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-3]-[doStart]-[379]-[INFO] Started @6047ms
+2017-11-02 10:10:12 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[Thread-3]-[run]-[49]-[INFO] >>>>>>>>>>>> xxl-job jetty server start success at port:9998.
+2017-11-02 10:10:15 customer_job_logjob [com.job.core.rpc.jetty.client.JettyClient]-[Thread-6]-[send]-[47]-[ERROR] unknown code for readObject at 0x3c (<)
+java.lang.IllegalStateException: unknown code for readObject at 0x3c (<)
+	at com.job.core.rpc.serialize.HessianSerializer.deserialize(HessianSerializer.java:43)
+	at com.job.core.rpc.jetty.client.JettyClient.send(JettyClient.java:42)
+	at com.job.core.rpc.NetComClientProxy$1.invoke(NetComClientProxy.java:53)
+	at com.sun.proxy.$Proxy8.registry(Unknown Source)
+	at com.job.core.thread.ExecutRegistThread$1.run(ExecutRegistThread.java:103)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.caucho.hessian.io.HessianProtocolException: unknown code for readObject at 0x3c (<)
+	at com.caucho.hessian.io.HessianInput.error(HessianInput.java:1697)
+	at com.caucho.hessian.io.HessianInput.readObject(HessianInput.java:1177)
+	at com.job.core.rpc.serialize.HessianSerializer.deserialize(HessianSerializer.java:41)
+	... 5 more
+2017-11-02 10:10:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-6]-[run]-[112]-[INFO] >>>>>>>>>>> customer_job registry error, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='169.254.169.145:9998'}
+java.lang.RuntimeException: Client-error:unknown code for readObject at 0x3c (<)
+	at com.job.core.rpc.NetComClientProxy$1.invoke(NetComClientProxy.java:60)
+	at com.sun.proxy.$Proxy8.registry(Unknown Source)
+	at com.job.core.thread.ExecutRegistThread$1.run(ExecutRegistThread.java:103)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-02 20:56:08 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[305]-[INFO] Root WebApplicationContext: initialization started
+2017-11-02 20:56:09 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[prepareRefresh]-[578]-[INFO] Refreshing Root WebApplicationContext: startup date [Thu Nov 02 20:56:09 CST 2017]; root of context hierarchy
+2017-11-02 20:56:09 customer_job_logjob [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]-[localhost-startStop-1]-[loadBeanDefinitions]-[317]-[INFO] Loading XML bean definitions from file [/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/applicationcontext-job.xml]
+2017-11-02 20:56:09 customer_job_logjob [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]-[localhost-startStop-1]-[loadProperties]-[172]-[INFO] Loading properties file from URL [file:/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/job-executor.properties]
+2017-11-02 20:56:09 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 20:56:09 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[registJobHandler]-[155]-[INFO] customer-job register jobhandler success, name:testJobHandler, jobHandler:com.job.TestJobHandler@73c2bf3c
+2017-11-02 20:56:09 customer_job_logjob [org.eclipse.jetty.util.log]-[Thread-10]-[initialized]-[186]-[INFO] Logging initialized @8801ms
+2017-11-02 20:56:09 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[345]-[INFO] Root WebApplicationContext: initialization completed in 1133 ms
+2017-11-02 20:56:10 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[327]-[INFO] jetty-9.2.22.v20170606
+2017-11-02 20:56:10 customer_job_logjob [org.eclipse.jetty.server.ServerConnector]-[Thread-10]-[doStart]-[266]-[INFO] Started ServerConnector@1d599dbc{HTTP/1.1}{0.0.0.0:9998}
+2017-11-02 20:56:10 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[379]-[INFO] Started @8967ms
+2017-11-02 20:56:10 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[Thread-10]-[run]-[49]-[INFO] >>>>>>>>>>>> xxl-job jetty server start success at port:9998.
+2017-11-02 20:56:13 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 20:56:43 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 20:57:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-4]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 20:57:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-4]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:4, handler:com.job.TestJobHandler@73c2bf3c
+2017-11-02 20:57:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14835.log]: 2017-11-02 0824:57:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 20:57:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14835.log]: 2017-11-02 0824:57:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+Caused by: java.lang.ClassNotFoundException: com.customer.json.JsonUtil
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1332)
+	at org.apache.catalina.loader.WebappClassLoaderBase.loadClass(WebappClassLoaderBase.java:1166)
+	... 2 more
+
+2017-11-02 20:57:13 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 20:57:43 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 20:58:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-6]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 20:58:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14836.log]: 2017-11-02 0824:58:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 20:58:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14836.log]: 2017-11-02 0824:58:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 20:58:13 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 20:58:43 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 20:59:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-8]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 20:59:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14837.log]: 2017-11-02 0824:59:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 20:59:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14837.log]: 2017-11-02 0824:59:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 20:59:13 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 20:59:43 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:00:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-10]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:00:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14838.log]: 2017-11-02 0924:00:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:00:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14838.log]: 2017-11-02 0924:00:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:00:00 customer_job_logjob [com.job.core.biz.impl.ExecutorBizImpl]-[pool-1-thread-12]-[run]-[120]-[ERROR] 
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+script1509627600098492591807.groovy: 1: expecting '}', found '@' @ line 1, column 366.
+   ntln("glue job 初始化");    }    @Override 
+                                 ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:310)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:150)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:120)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:132)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:360)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:145)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:111)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:237)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:167)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:931)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:593)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:569)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:546)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:298)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:268)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:254)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:212)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:222)
+	at com.job.core.glue.GlueFactory.loadNewInstance(GlueFactory.java:91)
+	at com.job.core.biz.impl.ExecutorBizImpl.run(ExecutorBizImpl.java:117)
+	at com.job.core.biz.impl.ExecutorBizImpl$$FastClassByCGLIB$$b1254f5e.invoke(<generated>)
+	at org.springframework.cglib.reflect.FastMethod.invoke(FastMethod.java:57)
+	at com.job.core.rpc.NetComServerFactory.invokeService(NetComServerFactory.java:79)
+	at com.job.core.rpc.jetty.server.JettyServerHandler.doInvoke(JettyServerHandler.java:63)
+	at com.job.core.rpc.jetty.server.JettyServerHandler.handle(JettyServerHandler.java:36)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:258)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:544)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-02 21:00:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:00:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:01:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-14]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:01:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14840.log]: 2017-11-02 0924:01:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:01:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14840.log]: 2017-11-02 0924:01:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:01:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:01:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:02:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-16]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:02:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14841.log]: 2017-11-02 0924:02:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:02:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14841.log]: 2017-11-02 0924:02:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:02:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:02:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:03:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-18]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:03:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14842.log]: 2017-11-02 0924:03:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:03:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14842.log]: 2017-11-02 0924:03:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:03:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:03:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:04:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-20]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:04:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14843.log]: 2017-11-02 0924:04:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:04:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14843.log]: 2017-11-02 0924:04:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:04:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:04:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:05:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-22]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:05:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14844.log]: 2017-11-02 0924:05:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:05:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14844.log]: 2017-11-02 0924:05:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:05:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:05:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:06:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-24]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:06:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14845.log]: 2017-11-02 0924:06:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:06:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14845.log]: 2017-11-02 0924:06:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:06:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:06:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:07:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-26]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:07:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14846.log]: 2017-11-02 0924:07:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:07:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14846.log]: 2017-11-02 0924:07:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:07:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:07:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:08:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-28]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:08:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14847.log]: 2017-11-02 0924:08:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:08:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14847.log]: 2017-11-02 0924:08:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:08:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:08:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:09:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-30]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:09:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14848.log]: 2017-11-02 0924:09:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:09:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14848.log]: 2017-11-02 0924:09:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:09:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:09:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:10:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-32]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:10:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14849.log]: 2017-11-02 0924:10:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:10:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14849.log]: 2017-11-02 0924:10:00 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.NoClassDefFoundError: com/customer/json/JsonUtil
+	at com.job.TestJobHandler.executor(TestJobHandler.java:17)
+	at com.job.core.thread.JobThread.run(JobThread.java:127)
+
+2017-11-02 21:10:14 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:10:44 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@f983b0f
+2017-11-02 21:11:40 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[305]-[INFO] Root WebApplicationContext: initialization started
+2017-11-02 21:11:40 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[prepareRefresh]-[578]-[INFO] Refreshing Root WebApplicationContext: startup date [Thu Nov 02 21:11:40 CST 2017]; root of context hierarchy
+2017-11-02 21:11:40 customer_job_logjob [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]-[localhost-startStop-1]-[loadBeanDefinitions]-[317]-[INFO] Loading XML bean definitions from file [/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/applicationcontext-job.xml]
+2017-11-02 21:11:41 customer_job_logjob [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]-[localhost-startStop-1]-[loadProperties]-[172]-[INFO] Loading properties file from URL [file:/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/job-executor.properties]
+2017-11-02 21:11:41 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:11:41 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[registJobHandler]-[155]-[INFO] customer-job register jobhandler success, name:testJobHandler, jobHandler:com.job.TestJobHandler@44184d19
+2017-11-02 21:11:41 customer_job_logjob [org.eclipse.jetty.util.log]-[Thread-10]-[initialized]-[186]-[INFO] Logging initialized @8509ms
+2017-11-02 21:11:41 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[345]-[INFO] Root WebApplicationContext: initialization completed in 1136 ms
+2017-11-02 21:11:41 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[327]-[INFO] jetty-9.2.22.v20170606
+2017-11-02 21:11:41 customer_job_logjob [org.eclipse.jetty.server.ServerConnector]-[Thread-10]-[doStart]-[266]-[INFO] Started ServerConnector@4bdc8721{HTTP/1.1}{0.0.0.0:9998}
+2017-11-02 21:11:41 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[379]-[INFO] Started @8684ms
+2017-11-02 21:11:41 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[Thread-10]-[run]-[49]-[INFO] >>>>>>>>>>>> xxl-job jetty server start success at port:9998.
+2017-11-02 21:11:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@7b3f5f30
+2017-11-02 21:12:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-5]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:12:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-5]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:4, handler:com.job.TestJobHandler@44184d19
+2017-11-02 21:12:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14850.log]: 2017-11-02 0924:12:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:12:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14850.log]: 2017-11-02 0924:12:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@25c666ee
+2017-11-02 21:12:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@4b36d872], callbackResult:com.job.core.biz.model.ReturnModel@7b3f5f30
+2017-11-02 21:12:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@7b3f5f30
+2017-11-02 21:12:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@7b3f5f30
+2017-11-02 21:13:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@7b3f5f30
+2017-11-02 21:13:33 customer_job_logjob [com.job.core.executor.JobExecutor]-[Thread-18]-[removeJobThread]-[246]-[INFO] remove jobId:4 is success!
+2017-11-02 21:13:33 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-18]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-18,5,main]
+2017-11-02 21:13:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@7b3f5f30
+2017-11-02 21:14:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@7b3f5f30
+2017-11-02 21:18:02 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[305]-[INFO] Root WebApplicationContext: initialization started
+2017-11-02 21:18:03 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[prepareRefresh]-[578]-[INFO] Refreshing Root WebApplicationContext: startup date [Thu Nov 02 21:18:03 CST 2017]; root of context hierarchy
+2017-11-02 21:18:03 customer_job_logjob [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]-[localhost-startStop-1]-[loadBeanDefinitions]-[317]-[INFO] Loading XML bean definitions from file [/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/applicationcontext-job.xml]
+2017-11-02 21:18:03 customer_job_logjob [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]-[localhost-startStop-1]-[loadProperties]-[172]-[INFO] Loading properties file from URL [file:/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/job-executor.properties]
+2017-11-02 21:18:03 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:18:03 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[registJobHandler]-[155]-[INFO] customer-job register jobhandler success, name:testJobHandler, jobHandler:com.job.TestJobHandler@796b0f27
+2017-11-02 21:18:04 customer_job_logjob [org.eclipse.jetty.util.log]-[Thread-10]-[initialized]-[186]-[INFO] Logging initialized @8000ms
+2017-11-02 21:18:04 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[345]-[INFO] Root WebApplicationContext: initialization completed in 1121 ms
+2017-11-02 21:18:04 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[327]-[INFO] jetty-9.2.22.v20170606
+2017-11-02 21:18:04 customer_job_logjob [org.eclipse.jetty.server.ServerConnector]-[Thread-10]-[doStart]-[266]-[INFO] Started ServerConnector@14908828{HTTP/1.1}{0.0.0.0:9998}
+2017-11-02 21:18:04 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[379]-[INFO] Started @8219ms
+2017-11-02 21:18:04 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[Thread-10]-[run]-[49]-[INFO] >>>>>>>>>>>> xxl-job jetty server start success at port:9998.
+2017-11-02 21:18:08 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:18:38 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:19:08 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:19:18 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-4]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:19:18 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-4]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:4, handler:com.job.TestJobHandler@796b0f27
+2017-11-02 21:19:18 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14854.log]: 2017-11-02 0924:19:18 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:19:19 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14854.log]: 2017-11-02 0924:19:19 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@14554cc4
+2017-11-02 21:19:19 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@1ea02a8a], callbackResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:19:38 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:20:08 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:20:12 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-6]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:20:12 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14855.log]: 2017-11-02 0924:20:12 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:20:12 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14855.log]: 2017-11-02 0924:20:12 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@14554cc4
+2017-11-02 21:20:12 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@3c9bf70a], callbackResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:20:38 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:21:08 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:21:38 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:21:45 customer_job_logjob [com.job.core.executor.JobExecutor]-[Thread-18]-[removeJobThread]-[246]-[INFO] remove jobId:4 is success!
+2017-11-02 21:21:45 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-18]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-18,5,main]
+2017-11-02 21:21:49 customer_job_logjob [com.job.core.biz.impl.ExecutorBizImpl]-[pool-1-thread-8]-[run]-[120]-[ERROR] 
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+script1509628909408492591807.groovy: 1: expecting '}', found '@' @ line 1, column 366.
+   ntln("glue job 初始化");    }    @Override 
+                                 ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:310)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:150)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:120)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:132)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:360)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:145)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:111)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:237)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:167)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:931)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:593)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:569)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:546)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:298)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:268)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:254)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:212)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:222)
+	at com.job.core.glue.GlueFactory.loadNewInstance(GlueFactory.java:91)
+	at com.job.core.biz.impl.ExecutorBizImpl.run(ExecutorBizImpl.java:117)
+	at com.job.core.biz.impl.ExecutorBizImpl$$FastClassByCGLIB$$b1254f5e.invoke(<generated>)
+	at org.springframework.cglib.reflect.FastMethod.invoke(FastMethod.java:57)
+	at com.job.core.rpc.NetComServerFactory.invokeService(NetComServerFactory.java:79)
+	at com.job.core.rpc.jetty.server.JettyServerHandler.doInvoke(JettyServerHandler.java:63)
+	at com.job.core.rpc.jetty.server.JettyServerHandler.handle(JettyServerHandler.java:36)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:258)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:544)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-02 21:22:08 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:22:38 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:22:57 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-10]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:22:57 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-10]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:4, handler:com.job.TestJobHandler@796b0f27
+2017-11-02 21:22:57 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14857.log]: 2017-11-02 0924:22:57 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-19] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:22:57 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14857.log]: 2017-11-02 0924:22:57 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-19] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@14554cc4
+2017-11-02 21:22:57 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@4398113b], callbackResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:23:06 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-12]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:23:06 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14858.log]: 2017-11-02 0924:23:06 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-19] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:23:06 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14858.log]: 2017-11-02 0924:23:06 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-19] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@14554cc4
+2017-11-02 21:23:06 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@36433f86], callbackResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:23:08 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:23:16 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-14]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:23:16 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14859.log]: 2017-11-02 0924:23:16 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-19] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:23:16 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14859.log]: 2017-11-02 0924:23:16 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-19] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@14554cc4
+2017-11-02 21:23:16 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@39afa380], callbackResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:23:38 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:24:08 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@2aa0eb45
+2017-11-02 21:29:09 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[305]-[INFO] Root WebApplicationContext: initialization started
+2017-11-02 21:29:09 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[prepareRefresh]-[578]-[INFO] Refreshing Root WebApplicationContext: startup date [Thu Nov 02 21:29:09 CST 2017]; root of context hierarchy
+2017-11-02 21:29:10 customer_job_logjob [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]-[localhost-startStop-1]-[loadBeanDefinitions]-[317]-[INFO] Loading XML bean definitions from file [/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/applicationcontext-job.xml]
+2017-11-02 21:29:10 customer_job_logjob [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]-[localhost-startStop-1]-[loadProperties]-[172]-[INFO] Loading properties file from URL [file:/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/job-executor.properties]
+2017-11-02 21:29:10 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:29:10 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[registJobHandler]-[155]-[INFO] customer-job register jobhandler success, name:testJobHandler, jobHandler:com.job.TestJobHandler@525e678e
+2017-11-02 21:29:10 customer_job_logjob [org.eclipse.jetty.util.log]-[Thread-10]-[initialized]-[186]-[INFO] Logging initialized @7605ms
+2017-11-02 21:29:10 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[345]-[INFO] Root WebApplicationContext: initialization completed in 1250 ms
+2017-11-02 21:29:10 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[327]-[INFO] jetty-9.2.22.v20170606
+2017-11-02 21:29:11 customer_job_logjob [org.eclipse.jetty.server.ServerConnector]-[Thread-10]-[doStart]-[266]-[INFO] Started ServerConnector@e34492{HTTP/1.1}{0.0.0.0:9998}
+2017-11-02 21:29:11 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[379]-[INFO] Started @7837ms
+2017-11-02 21:29:11 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[Thread-10]-[run]-[49]-[INFO] >>>>>>>>>>>> xxl-job jetty server start success at port:9998.
+2017-11-02 21:29:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:29:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:30:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-4]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:30:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-4]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:4, handler:com.job.TestJobHandler@525e678e
+2017-11-02 21:30:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14860.log]: 2017-11-02 0924:30:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:30:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14860.log]: 2017-11-02 0924:30:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:30:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6c819328], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:30:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:30:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:31:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-5]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:31:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14861.log]: 2017-11-02 0924:31:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:31:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14861.log]: 2017-11-02 0924:31:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:31:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@79dbc34b], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:31:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:31:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:32:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-7]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:32:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14862.log]: 2017-11-02 0924:32:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:32:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14862.log]: 2017-11-02 0924:32:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:32:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@1ce80f20], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:32:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:32:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:33:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-9]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:33:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14863.log]: 2017-11-02 0924:33:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:33:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14863.log]: 2017-11-02 0924:33:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:33:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@720a3031], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:33:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:33:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:34:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-11]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:34:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14864.log]: 2017-11-02 0924:34:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:34:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14864.log]: 2017-11-02 0924:34:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:34:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@1f1952eb], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:34:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:34:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:35:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-13]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:35:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14865.log]: 2017-11-02 0924:35:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:35:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14865.log]: 2017-11-02 0924:35:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:35:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@1f6ff458], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:35:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:35:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:36:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-15]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:36:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14866.log]: 2017-11-02 0924:36:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:36:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14866.log]: 2017-11-02 0924:36:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:36:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6d7be738], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:36:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:36:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:37:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-17]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:37:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14867.log]: 2017-11-02 0924:37:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:37:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14867.log]: 2017-11-02 0924:37:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:37:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@151beee8], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:37:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:37:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:38:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-19]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:38:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14868.log]: 2017-11-02 0924:38:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:38:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14868.log]: 2017-11-02 0924:38:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:38:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@1870d351], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:38:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:38:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:39:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-21]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:39:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14869.log]: 2017-11-02 0924:39:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:39:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14869.log]: 2017-11-02 0924:39:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:39:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@70ce3a7e], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:39:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:39:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:40:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-24]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:40:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14871.log]: 2017-11-02 0924:40:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:40:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14871.log]: 2017-11-02 0924:40:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:40:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@bb7764d], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:40:00 customer_job_logjob [com.job.core.biz.impl.ExecutorBizImpl]-[pool-1-thread-23]-[run]-[120]-[ERROR] 
+org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+script1509630000070492591807.groovy: 1: expecting '}', found '@' @ line 1, column 366.
+   ntln("glue job 初始化");    }    @Override 
+                                 ^
+
+1 error
+
+	at org.codehaus.groovy.control.ErrorCollector.failIfErrors(ErrorCollector.java:310)
+	at org.codehaus.groovy.control.ErrorCollector.addFatalError(ErrorCollector.java:150)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:120)
+	at org.codehaus.groovy.control.ErrorCollector.addError(ErrorCollector.java:132)
+	at org.codehaus.groovy.control.SourceUnit.addError(SourceUnit.java:360)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.transformCSTIntoAST(AntlrParserPlugin.java:145)
+	at org.codehaus.groovy.antlr.AntlrParserPlugin.parseCST(AntlrParserPlugin.java:111)
+	at org.codehaus.groovy.control.SourceUnit.parse(SourceUnit.java:237)
+	at org.codehaus.groovy.control.CompilationUnit$1.call(CompilationUnit.java:167)
+	at org.codehaus.groovy.control.CompilationUnit.applyToSourceUnits(CompilationUnit.java:931)
+	at org.codehaus.groovy.control.CompilationUnit.doPhaseOperation(CompilationUnit.java:593)
+	at org.codehaus.groovy.control.CompilationUnit.processPhaseOperations(CompilationUnit.java:569)
+	at org.codehaus.groovy.control.CompilationUnit.compile(CompilationUnit.java:546)
+	at groovy.lang.GroovyClassLoader.doParseClass(GroovyClassLoader.java:298)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:268)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:254)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:212)
+	at groovy.lang.GroovyClassLoader.parseClass(GroovyClassLoader.java:222)
+	at com.job.core.glue.GlueFactory.loadNewInstance(GlueFactory.java:91)
+	at com.job.core.biz.impl.ExecutorBizImpl.run(ExecutorBizImpl.java:117)
+	at com.job.core.biz.impl.ExecutorBizImpl$$FastClassByCGLIB$$b1254f5e.invoke(<generated>)
+	at org.springframework.cglib.reflect.FastMethod.invoke(FastMethod.java:57)
+	at com.job.core.rpc.NetComServerFactory.invokeService(NetComServerFactory.java:79)
+	at com.job.core.rpc.jetty.server.JettyServerHandler.doInvoke(JettyServerHandler.java:63)
+	at com.job.core.rpc.jetty.server.JettyServerHandler.handle(JettyServerHandler.java:36)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:110)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:97)
+	at org.eclipse.jetty.server.Server.handle(Server.java:499)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:311)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:258)
+	at org.eclipse.jetty.io.AbstractConnection$2.run(AbstractConnection.java:544)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-02 21:40:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:40:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:41:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-26]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:41:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14872.log]: 2017-11-02 0924:41:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:41:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14872.log]: 2017-11-02 0924:41:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:41:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6fc3383b], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:41:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:41:45 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:42:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-28]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:42:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14873.log]: 2017-11-02 0924:42:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:42:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14873.log]: 2017-11-02 0924:42:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:42:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@432cda60], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:42:15 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:42:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:43:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-30]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:43:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14874.log]: 2017-11-02 0924:43:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:43:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14874.log]: 2017-11-02 0924:43:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:43:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@509c702d], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:43:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:43:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:44:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-32]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:44:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14875.log]: 2017-11-02 0924:44:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:44:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14875.log]: 2017-11-02 0924:44:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:44:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@7056053e], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:44:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:44:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:45:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-35]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:45:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14876.log]: 2017-11-02 0924:45:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:45:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14876.log]: 2017-11-02 0924:45:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:45:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@48261900], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:45:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-34]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:11, handler:com.job.core.handler.impl.GlueJobHandler@75fba589
+2017-11-02 21:45:00 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14877.log]: 2017-11-02 0924:45:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-19] <br>----------- customer_job job execute start -----------<br>----------- Params:[gluetest]
+2017-11-02 21:45:00 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14877.log]: 2017-11-02 0924:45:00 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-19] jobhandlerName:com.job.GlueTestJobHandler@55f0c74e，版本：1509630085000，start---
+2017-11-02 21:45:00 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14877.log]: 2017-11-02 0924:45:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-19] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:45:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@5e5bda74], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:45:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:45:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:46:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-38]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:46:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14878.log]: 2017-11-02 0924:46:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:46:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14878.log]: 2017-11-02 0924:46:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:46:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6da55e1c], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:46:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:46:33 customer_job_logjob [com.job.core.executor.JobExecutor]-[Thread-19]-[removeJobThread]-[246]-[INFO] remove jobId:11 is success!
+2017-11-02 21:46:33 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-19]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-19,5,main]
+2017-11-02 21:46:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:47:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-40]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:47:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14879.log]: 2017-11-02 0924:47:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:47:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14879.log]: 2017-11-02 0924:47:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:47:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6ba672b0], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:47:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:47:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:48:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-42]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:48:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14880.log]: 2017-11-02 0924:48:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:48:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14880.log]: 2017-11-02 0924:48:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:48:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@26d0fd40], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:48:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:48:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:49:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-44]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:49:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14881.log]: 2017-11-02 0924:49:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:49:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14881.log]: 2017-11-02 0924:49:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:49:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@33ef41fa], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:49:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:49:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:50:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-47]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:50:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14883.log]: 2017-11-02 0924:50:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:50:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14883.log]: 2017-11-02 0924:50:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:50:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6f574134], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:50:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-46]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:11, handler:com.job.core.handler.impl.GlueJobHandler@78a0d80d
+2017-11-02 21:50:00 customer_job_logjob [customer job]-[Thread-20]-[log]-[45]-[WARN] [2017-11-02/14882.log]: 2017-11-02 0924:50:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-20] <br>----------- customer_job job execute start -----------<br>----------- Params:[gluetest]
+2017-11-02 21:50:00 customer_job_logjob [customer job]-[Thread-20]-[log]-[45]-[WARN] [2017-11-02/14882.log]: 2017-11-02 0924:50:00 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-20] jobhandlerName:com.job.GlueTestJobHandler@1e0e76dc，版本：1509630085000，start---
+2017-11-02 21:50:00 customer_job_logjob [customer job]-[Thread-20]-[log]-[45]-[WARN] [2017-11-02/14882.log]: 2017-11-02 0924:50:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-20] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:50:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@22cbd152], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:50:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:50:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:51:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-49]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:51:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14884.log]: 2017-11-02 0924:51:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:51:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14884.log]: 2017-11-02 0924:51:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:51:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@3b376329], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:51:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:51:33 customer_job_logjob [com.job.core.executor.JobExecutor]-[Thread-20]-[removeJobThread]-[246]-[INFO] remove jobId:11 is success!
+2017-11-02 21:51:33 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-20]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-20,5,main]
+2017-11-02 21:51:46 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:52:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-51]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 21:52:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14885.log]: 2017-11-02 0924:52:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 21:52:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14885.log]: 2017-11-02 0924:52:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@6b868293
+2017-11-02 21:52:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@1c229272], callbackResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 21:52:16 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.0.101:9998'}, registryResult:com.job.core.biz.model.ReturnModel@d6f999a
+2017-11-02 22:20:21 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[305]-[INFO] Root WebApplicationContext: initialization started
+2017-11-02 22:20:21 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-1]-[prepareRefresh]-[578]-[INFO] Refreshing Root WebApplicationContext: startup date [Thu Nov 02 22:20:21 CST 2017]; root of context hierarchy
+2017-11-02 22:20:22 customer_job_logjob [org.springframework.beans.factory.xml.XmlBeanDefinitionReader]-[localhost-startStop-1]-[loadBeanDefinitions]-[317]-[INFO] Loading XML bean definitions from file [/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/applicationcontext-job.xml]
+2017-11-02 22:20:22 customer_job_logjob [org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]-[localhost-startStop-1]-[loadProperties]-[172]-[INFO] Loading properties file from URL [file:/Users/wodezuiaishinageren/Documents/intellij/project/projectservice/customer_job/jobclient/target/classes/job-executor.properties]
+2017-11-02 22:20:22 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:20:22 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-1]-[registJobHandler]-[155]-[INFO] customer-job register jobhandler success, name:testJobHandler, jobHandler:com.job.TestJobHandler@1ee3f172
+2017-11-02 22:20:22 customer_job_logjob [org.eclipse.jetty.util.log]-[Thread-10]-[initialized]-[186]-[INFO] Logging initialized @9934ms
+2017-11-02 22:20:22 customer_job_logjob [org.springframework.web.context.ContextLoader]-[localhost-startStop-1]-[initWebApplicationContext]-[345]-[INFO] Root WebApplicationContext: initialization completed in 1330 ms
+2017-11-02 22:20:22 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[327]-[INFO] jetty-9.2.22.v20170606
+2017-11-02 22:20:23 customer_job_logjob [org.eclipse.jetty.server.ServerConnector]-[Thread-10]-[doStart]-[266]-[INFO] Started ServerConnector@4a73fdbf{HTTP/1.1}{0.0.0.0:9998}
+2017-11-02 22:20:23 customer_job_logjob [org.eclipse.jetty.server.Server]-[Thread-10]-[doStart]-[379]-[INFO] Started @10135ms
+2017-11-02 22:20:23 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[Thread-10]-[run]-[49]-[INFO] >>>>>>>>>>>> xxl-job jetty server start success at port:9998.
+2017-11-02 22:20:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:20:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:21:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-4]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:21:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-4]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:4, handler:com.job.TestJobHandler@1ee3f172
+2017-11-02 22:21:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14886.log]: 2017-11-02 1024:21:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:21:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14886.log]: 2017-11-02 1024:21:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:21:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@4b08d4b7], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:21:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:21:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:22:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-6]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:22:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14887.log]: 2017-11-02 1024:22:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:22:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14887.log]: 2017-11-02 1024:22:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:22:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@2be3e951], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:22:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:22:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:23:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-8]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:23:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14888.log]: 2017-11-02 1024:23:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:23:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14888.log]: 2017-11-02 1024:23:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:23:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@cad7613], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:23:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:23:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:24:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-10]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:24:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14889.log]: 2017-11-02 1024:24:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:24:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14889.log]: 2017-11-02 1024:24:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:24:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@213d8fd], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:24:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:24:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:25:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-12]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:25:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14890.log]: 2017-11-02 1024:25:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:25:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14890.log]: 2017-11-02 1024:25:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:25:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@32232907], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:25:01 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-13]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:11, handler:com.job.core.handler.impl.GlueJobHandler@57f594f3
+2017-11-02 22:25:01 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14891.log]: 2017-11-02 1024:25:01 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-19] <br>----------- customer_job job execute start -----------<br>----------- Params:[gluetest]
+2017-11-02 22:25:01 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14891.log]: 2017-11-02 1024:25:01 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-19] jobhandlerName:com.job.GlueTestJobHandler@2d1986ab，版本：1509630085000，start---
+2017-11-02 22:25:01 customer_job_logjob [customer job]-[Thread-19]-[log]-[45]-[WARN] [2017-11-02/14891.log]: 2017-11-02 1024:25:01 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-19] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:25:01 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@43dbccf9], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:25:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:25:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:26:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-15]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:26:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14892.log]: 2017-11-02 1024:26:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:26:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14892.log]: 2017-11-02 1024:26:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:26:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@5ab67fbf], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:26:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:26:34 customer_job_logjob [com.job.core.executor.JobExecutor]-[Thread-19]-[removeJobThread]-[246]-[INFO] remove jobId:11 is success!
+2017-11-02 22:26:34 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-19]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-19,5,main]
+2017-11-02 22:26:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:27:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-17]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:27:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14893.log]: 2017-11-02 1024:27:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:27:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14893.log]: 2017-11-02 1024:27:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:27:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@7150128a], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:27:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:27:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:28:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-19]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:28:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14894.log]: 2017-11-02 1024:28:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:28:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14894.log]: 2017-11-02 1024:28:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:28:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@b7486bc], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:28:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:28:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:29:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-21]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:29:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14895.log]: 2017-11-02 1024:29:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:29:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14895.log]: 2017-11-02 1024:29:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:29:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@298de082], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:29:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:29:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:30:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-23]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:30:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14896.log]: 2017-11-02 1024:30:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:30:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14896.log]: 2017-11-02 1024:30:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:30:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@63641a20], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:30:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-25]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:11, handler:com.job.core.handler.impl.GlueJobHandler@74ee6d7e
+2017-11-02 22:30:00 customer_job_logjob [customer job]-[Thread-20]-[log]-[45]-[WARN] [2017-11-02/14897.log]: 2017-11-02 1024:30:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-20] <br>----------- customer_job job execute start -----------<br>----------- Params:[gluetest]
+2017-11-02 22:30:00 customer_job_logjob [customer job]-[Thread-20]-[log]-[45]-[WARN] [2017-11-02/14897.log]: 2017-11-02 1024:30:00 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-20] jobhandlerName:com.job.GlueTestJobHandler@3fca0f1c，版本：1509630085000，start---
+2017-11-02 22:30:00 customer_job_logjob [customer job]-[Thread-20]-[log]-[45]-[WARN] [2017-11-02/14897.log]: 2017-11-02 1024:30:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-20] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:30:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@7338bb3a], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:30:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:30:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:31:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-26]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:31:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14898.log]: 2017-11-02 1024:31:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:31:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14898.log]: 2017-11-02 1024:31:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:31:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6216bfca], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:31:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:31:33 customer_job_logjob [com.job.core.executor.JobExecutor]-[Thread-20]-[removeJobThread]-[246]-[INFO] remove jobId:11 is success!
+2017-11-02 22:31:33 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-20]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-20,5,main]
+2017-11-02 22:31:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:32:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-28]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:32:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14899.log]: 2017-11-02 1024:32:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:32:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14899.log]: 2017-11-02 1024:32:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:32:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@c180a4], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:32:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:32:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:33:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-30]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:33:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14900.log]: 2017-11-02 1024:33:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:33:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14900.log]: 2017-11-02 1024:33:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:33:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@5fc290bd], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:33:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:33:55 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-32]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:12, handler:com.job.core.handler.impl.GlueJobHandler@31528fb7
+2017-11-02 22:33:55 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14901.log]: 2017-11-02 1024:33:55 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-21] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText]
+2017-11-02 22:33:55 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14901.log]: 2017-11-02 1024:33:55 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-21] jobhandlerName:com.job.GlueTestJobHandler@5275215，版本：1509633233000，start---
+2017-11-02 22:33:55 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14901.log]: 2017-11-02 1024:33:55 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-21] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:33:55 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@c504c96], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:33:57 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:00 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-33]-[loadJobHandler]-[191]-[INFO] handler annotation name is 【testJobHandler】获取实例
+2017-11-02 22:34:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14902.log]: 2017-11-02 1024:34:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-18] <br>----------- customer_job job execute start -----------<br>----------- Params:[admin]
+2017-11-02 22:34:00 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14902.log]: 2017-11-02 1024:34:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-18] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6072f44c], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:00 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14903.log]: 2017-11-02 1024:34:00 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-21] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText]
+2017-11-02 22:34:00 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14903.log]: 2017-11-02 1024:34:00 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-21] jobhandlerName:com.job.GlueTestJobHandler@5275215，版本：1509633233000，start---
+2017-11-02 22:34:00 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14903.log]: 2017-11-02 1024:34:00 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-21] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:00 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6d978756], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:05 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14904.log]: 2017-11-02 1024:34:05 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-21] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText]
+2017-11-02 22:34:05 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14904.log]: 2017-11-02 1024:34:05 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-21] jobhandlerName:com.job.GlueTestJobHandler@5275215，版本：1509633233000，start---
+2017-11-02 22:34:05 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14904.log]: 2017-11-02 1024:34:05 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-21] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:05 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@efa3a5], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:10 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14905.log]: 2017-11-02 1024:34:10 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-21] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText]
+2017-11-02 22:34:10 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14905.log]: 2017-11-02 1024:34:10 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-21] jobhandlerName:com.job.GlueTestJobHandler@5275215，版本：1509633233000，start---
+2017-11-02 22:34:10 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14905.log]: 2017-11-02 1024:34:10 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-21] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:10 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@11181f81], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:15 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-41]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:12, handler:com.job.core.handler.impl.GlueJobHandler@7044e429
+2017-11-02 22:34:15 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14905.log]: 2017-11-02 1024:34:15 [com.job.core.thread.JobThread]-[run]-[161]-[Thread-21] <br>----------- customer_job toStop, stopReason:更新任务逻辑或更换任务模式,终止旧任务线程
+2017-11-02 22:34:15 customer_job_logjob [customer job]-[Thread-21]-[log]-[45]-[WARN] [2017-11-02/14905.log]: 2017-11-02 1024:34:15 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-21] ----------- customer_job JobThread Exception:java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.job.core.thread.JobThread.run(JobThread.java:104)
+
+2017-11-02 22:34:15 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14906.log]: 2017-11-02 1024:34:15 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-22] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:15 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14906.log]: 2017-11-02 1024:34:15 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-22] jobhandlerName:com.job.GlueTestJobHandler@2c3e3734，版本：1509633252000，start---
+2017-11-02 22:34:15 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14906.log]: 2017-11-02 1024:34:15 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-22] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:15 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-21]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-21,5,main]
+2017-11-02 22:34:15 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@3b9b8f5e], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:20 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14907.log]: 2017-11-02 1024:34:20 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-22] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:20 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14907.log]: 2017-11-02 1024:34:20 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-22] jobhandlerName:com.job.GlueTestJobHandler@2c3e3734，版本：1509633252000，start---
+2017-11-02 22:34:20 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14907.log]: 2017-11-02 1024:34:20 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-22] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:20 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@641ac15a], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:25 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14908.log]: 2017-11-02 1024:34:25 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-22] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:25 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14908.log]: 2017-11-02 1024:34:25 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-22] jobhandlerName:com.job.GlueTestJobHandler@2c3e3734，版本：1509633252000，start---
+2017-11-02 22:34:25 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14908.log]: 2017-11-02 1024:34:25 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-22] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:25 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@385f7134], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:27 customer_job_logjob [com.job.core.thread.ExecutRegistThread]-[Thread-13]-[run]-[106]-[INFO] >>>>>>>>>>> customer_job registry success, registryParam:RegistryParam{registGroup='EXECUTOR', registryKey='testjob', registryValue='192.168.109.1:9998'}, registryResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:30 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14909.log]: 2017-11-02 1024:34:30 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-22] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:30 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14909.log]: 2017-11-02 1024:34:30 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-22] jobhandlerName:com.job.GlueTestJobHandler@2c3e3734，版本：1509633252000，start---
+2017-11-02 22:34:30 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14909.log]: 2017-11-02 1024:34:30 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-22] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:30 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@1f9d34f0], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:35 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14910.log]: 2017-11-02 1024:34:35 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-22] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:35 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14910.log]: 2017-11-02 1024:34:35 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-22] jobhandlerName:com.job.GlueTestJobHandler@2c3e3734，版本：1509633252000，start---
+2017-11-02 22:34:35 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14910.log]: 2017-11-02 1024:34:35 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-22] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:35 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@6db88fff], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:40 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14911.log]: 2017-11-02 1024:34:40 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-22] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:40 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14911.log]: 2017-11-02 1024:34:40 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-22] jobhandlerName:com.job.GlueTestJobHandler@2c3e3734，版本：1509633252000，start---
+2017-11-02 22:34:40 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14911.log]: 2017-11-02 1024:34:40 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-22] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:40 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@363c575c], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:45 customer_job_logjob [com.job.core.executor.JobExecutor]-[pool-1-thread-53]-[registryJobThread]-[211]-[INFO] >>>>>>>>>>> customer_job regist JobThread success, jobId:12, handler:com.job.core.handler.impl.GlueJobHandler@4fefa231
+2017-11-02 22:34:45 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14911.log]: 2017-11-02 1024:34:45 [com.job.core.thread.JobThread]-[run]-[161]-[Thread-22] <br>----------- customer_job toStop, stopReason:更新任务逻辑或更换任务模式,终止旧任务线程
+2017-11-02 22:34:45 customer_job_logjob [customer job]-[Thread-22]-[log]-[45]-[WARN] [2017-11-02/14911.log]: 2017-11-02 1024:34:45 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-22] ----------- customer_job JobThread Exception:java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.job.core.thread.JobThread.run(JobThread.java:104)
+
+2017-11-02 22:34:45 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14912.log]: 2017-11-02 1024:34:45 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-23] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:45 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14912.log]: 2017-11-02 1024:34:45 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-23] jobhandlerName:com.job.GlueTestJobHandler@31b6ae32，版本：1509633282000，start---
+2017-11-02 22:34:45 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14912.log]: 2017-11-02 1024:34:45 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-23] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:45 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-22]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-22,5,main]
+2017-11-02 22:34:45 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@1e4c0ba], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:50 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14913.log]: 2017-11-02 1024:34:50 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-23] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:50 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14913.log]: 2017-11-02 1024:34:50 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-23] jobhandlerName:com.job.GlueTestJobHandler@31b6ae32，版本：1509633282000，start---
+2017-11-02 22:34:50 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14913.log]: 2017-11-02 1024:34:50 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-23] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:50 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@68273a04], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:55 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14914.log]: 2017-11-02 1024:34:55 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-23] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 22:34:55 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14914.log]: 2017-11-02 1024:34:55 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-23] jobhandlerName:com.job.GlueTestJobHandler@31b6ae32，版本：1509633282000，start---
+2017-11-02 22:34:55 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14914.log]: 2017-11-02 1024:34:55 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-23] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 22:34:55 customer_job_logjob [com.job.core.thread.TriggerCallBackThread]-[Thread-14]-[run]-[57]-[INFO] >>>>>>>>>>> xxl-job callback success, callbackParamList:[com.job.core.biz.model.HandleCallBackParam@23166812], callbackResult:com.job.core.biz.model.ReturnModel@5a6d90be
+2017-11-02 22:34:55 customer_job_logjob [org.springframework.web.context.support.XmlWebApplicationContext]-[localhost-startStop-2]-[doClose]-[960]-[INFO] Closing Root WebApplicationContext: startup date [Thu Nov 02 22:20:21 CST 2017]; root of context hierarchy
+2017-11-02 22:34:55 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-2]-[removeJobThread]-[246]-[INFO] remove jobId:4 is success!
+2017-11-02 22:34:55 customer_job_logjob [com.job.core.executor.JobExecutor]-[localhost-startStop-2]-[removeJobThread]-[246]-[INFO] remove jobId:12 is success!
+2017-11-02 22:34:55 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14914.log]: 2017-11-02 1024:34:55 [com.job.core.thread.JobThread]-[run]-[161]-[Thread-23] <br>----------- customer_job toStop, stopReason:Web容器销毁终止
+2017-11-02 22:34:55 customer_job_logjob [customer job]-[Thread-23]-[log]-[45]-[WARN] [2017-11-02/14914.log]: 2017-11-02 1024:34:55 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-23] ----------- customer_job JobThread Exception:java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.job.core.thread.JobThread.run(JobThread.java:104)
+
+2017-11-02 22:34:55 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-23]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-23,5,main]
+2017-11-02 22:34:55 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14902.log]: 2017-11-02 1024:34:55 [com.job.core.thread.JobThread]-[run]-[161]-[Thread-18] <br>----------- customer_job toStop, stopReason:Web容器销毁终止
+2017-11-02 22:34:55 customer_job_logjob [customer job]-[Thread-18]-[log]-[45]-[WARN] [2017-11-02/14902.log]: 2017-11-02 1024:34:55 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-18] ----------- customer_job JobThread Exception:java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.job.core.thread.JobThread.run(JobThread.java:104)
+
+2017-11-02 22:34:55 customer_job_logjob [com.job.core.thread.JobThread]-[Thread-18]-[run]-[181]-[INFO] >>>>>>>>>>>> customer_job JobThread stoped, hashCode:Thread[Thread-18,5,main]
+2017-11-02 22:34:55 customer_job_logjob [org.eclipse.jetty.server.ServerConnector]-[localhost-startStop-2]-[doStop]-[306]-[INFO] Stopped ServerConnector@4a73fdbf{HTTP/1.1}{0.0.0.0:9998}
+2017-11-02 22:34:55 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[localhost-startStop-2]-[destroy]-[90]-[INFO] >>>>>>>>>>> xxl-rpc server destroy success, netcon=com.job.core.rpc.jetty.server.JettyServer
+2017-11-02 22:34:55 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[Thread-10]-[run]-[59]-[ERROR] 
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at java.util.concurrent.ThreadPoolExecutor.awaitTermination(ThreadPoolExecutor.java:1465)
+	at org.eclipse.jetty.util.thread.ExecutorThreadPool.join(ExecutorThreadPool.java:182)
+	at org.eclipse.jetty.server.Server.join(Server.java:556)
+	at com.job.core.rpc.jetty.server.JettyServer$1.run(JettyServer.java:56)
+	at java.lang.Thread.run(Thread.java:745)
+2017-11-02 22:34:55 customer_job_logjob [com.job.core.rpc.jetty.server.JettyServer]-[Thread-10]-[destroy]-[90]-[INFO] >>>>>>>>>>> xxl-rpc server destroy success, netcon=com.job.core.rpc.jetty.server.JettyServer

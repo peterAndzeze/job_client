@@ -1,0 +1,10 @@
+2017-11-02 1024:34:10 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-21] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText]
+2017-11-02 1024:34:10 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-21] jobhandlerName:com.job.GlueTestJobHandler@5275215，版本：1509633233000，start---
+2017-11-02 1024:34:10 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-21] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1
+2017-11-02 1024:34:15 [com.job.core.thread.JobThread]-[run]-[161]-[Thread-21] <br>----------- customer_job toStop, stopReason:更新任务逻辑或更换任务模式,终止旧任务线程
+2017-11-02 1024:34:15 [com.job.core.thread.JobThread]-[run]-[167]-[Thread-21] ----------- customer_job JobThread Exception:java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+	at com.job.core.thread.JobThread.run(JobThread.java:104)
+

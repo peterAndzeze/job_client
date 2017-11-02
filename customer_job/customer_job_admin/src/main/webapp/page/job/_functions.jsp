@@ -55,8 +55,10 @@ phenix.editJob=function(id){
 		if(result.glueType="GLUE_GROOVY"){
 		   Ext.getCmp("executorHandler").allowBlank=true;
            Ext.getCmp("executorHandler").disable();
+           //Ext.getCmp('gluePanel').show();
 		}
 		formWin.show();
+		document.getElementById("glueSourceTxt").value=Ext.getCmp('glueSource').getValue();
 	});
 }
 /**
@@ -93,6 +95,12 @@ saveJob = function() {
 		phenix.Msg.warn('请正确填写');
 		return;
 	}
+	if(Ext.getCmp('glueType').getValue()=="GLUE_GROOVY"){
+		   if(Ext.isEmpty(Ext.getCmp("glueSource").getValue())){
+		      phenix.Msg.warn('请填写java源代码！');
+              return;
+		   }
+     }
 	var jobInfo= Ext.getCmp(formId).getForm().getValues();
 	phenix.ajax.request(basePath + '/jobInfo/saveOrUpdateJob.do',jobInfo,function(result){
 		    phenix.Msg.info(result.msg);
@@ -128,7 +136,8 @@ function addJobInfo(){
 phenix.jobGlueSource=function(id){
 	var win=createGlueFormWin(id);
 	phenix.ajax.request(basePath + '/jobInfo/queryJobById.do',{'id':id},function(result){
-        document.getElementById("glueSource").innerText=result.glueSource;
+        Ext.getCmp("glueSource").setValue(result.glueSource);
+        Ext.getCmp('glueRemark').setValue(result.glueRemark);
     });
 	win.show();
 }
@@ -137,12 +146,15 @@ phenix.jobGlueSource=function(id){
  */
 function saveGlue(id){
 	var source=Ext.getCmp("glueSource").getValue();
-	source = source.replace(/<[^>]+>/g,"").replace(/&nbsp;/ig,'');
-	  phenix.Msg.confirm('温馨提示','您确定提交源代码吗？',function(btn,text){
+	var glueRemark=Ext.getCmp("glueRemark").getValue();
+	if(Ext.isEmpty(source) || Ext.isEmpty('glueRemark')){
+	     phenix.Msg.warn("请完整填写备注和源代码");
+	}
+	phenix.Msg.confirm('温馨提示','您确定提交源代码吗？',function(btn,text){
         if('yes'!=btn){
             return;
         }
-         phenix.ajax.request(basePath + '/jobInfo/saveGlue.do',{'id':id,"glueSource":source},function(result){
+         phenix.ajax.request(basePath + '/jobInfo/saveGlue.do',{'id':id,"glueSource":source,"glueRemark":glueRemark},function(result){
              phenix.Msg.info(result.msg);
              grid.getStore().load({params:{start:0, limit:pageSize}});
         });

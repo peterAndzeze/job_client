@@ -1,0 +1,3 @@
+2017-11-02 1024:34:15 [com.job.core.thread.JobThread]-[run]-[126]-[Thread-22] <br>----------- customer_job job execute start -----------<br>----------- Params:[glueText11]
+2017-11-02 1024:34:15 [com.job.core.handler.impl.GlueJobHandler]-[executor]-[29]-[Thread-22] jobhandlerName:com.job.GlueTestJobHandler@2c3e3734，版本：1509633252000，start---
+2017-11-02 1024:34:15 [com.job.core.thread.JobThread]-[run]-[132]-[Thread-22] <br>----------- customer_job job execute end(finish) -----------<br>----------- ReturnT:com.job.core.biz.model.ReturnModel@43aa1df1

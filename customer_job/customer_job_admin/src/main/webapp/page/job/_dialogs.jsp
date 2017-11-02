@@ -50,13 +50,17 @@ function createFormWin() {
                                         mode: 'local',
                                         anchor : '95%',
                                          selectOnFocus: true,
-                                        listeners:{'change':function(record){
+                                        listeners:{'select':function(record){
                                             if(record.value=="GLUE_GROOVY"){
-                                            	 Ext.getCmp("executorHandler").allowBlank=true;
-                                                Ext.getCmp("executorHandler").disable();
+                                                Ext.getCmp("executorHandler").hide();
+                                                Ext.getCmp("executorHandler").allowBlank=true;
+                                                Ext.getCmp("gluePanel").show();
+                                                Ext.getCmp('glueRemark').allowBlank=false;
                                             }else{
                                             	Ext.getCmp("executorHandler").allowBlank=false;
-                                                Ext.getCmp("executorHandler").enable();
+                                                Ext.getCmp("executorHandler").show();
+                                                Ext.getCmp('glueRemark').allowBlank=true;
+                                                 Ext.getCmp("gluePanel").hide();
                                             }
                                         }}
                                     },{
@@ -102,8 +106,7 @@ function createFormWin() {
                                     },{
                                         id:'executorHandler',
                                         name:'executorHandler',
-                                        fieldLabel:'JobHandler',
-                                        allowBlank:false
+                                        fieldLabel:'JobHandler'
                                     },{
                                         id:'childJobKey',
                                         name:'childJobKey',
@@ -136,18 +139,21 @@ function createFormWin() {
                                     },{
                                         id:'id',
                                         name:'id',
-                                        fieldLabel:'失败发送邮件',
                                         hidden:true
                                     }
                                     ]
                                     }
             	                                                                                     
             	         ]
-              }];
+              },{xtype:'panel',layout:'form',id:'gluePanel',hidden:true,border:false,items:[{fieldLabel:'备注',xtype:'textfield',id:'glueRemark',name:'glueRemark'},{xtype:'textarea',autoScroll:true,width : '80%', height:'60%',fieldLabel:'源代码内容',id:"glueSource",name:'glueSource'}]}
+              
+              
+              ];
 var form = new Ext.form.FormPanel({
 	id: formId,
 	labelAlign:'right',
 	buttonAlign:'center',
+	autoScroll:true,
 	fileUpload: true,
 	frame : true,
 	items: fields,
@@ -177,24 +183,31 @@ function createGlueFormWin(id){
         frame: true,
         buttonAlign:'center',
         layout: 'fit',
-        tbar : ['->','备注：',{xtype:'textfield'},'版本:',{
+        tbar : ['->','备注：',{xtype:'textfield',id:'glueRemark'},'版本:',{
 			fieldLabel : '回溯版本',
-			hiddenName : 'jobId',
 			xtype : 'combo',
 			displayField : 'glueRemark', // 显示字段
-			valueField : 'jobId', // 值，可选
+			valueField : 'glueSource', // 值，可选
+			emptyText:'当前版本',
 			store : new Ext.data.JsonStore({
 				        autoLoad:true,
-						fields : ['jobId', 'glueRemark'],
+						fields : ['glueSource', 'glueRemark'],
 						url:basePath + '/glue/glues.do?jobId='+id
 					}),
 			forceSelection : false,
 			triggerAction : 'all',
 			mode : 'local',
 			anchor : '95%',
-			selectOnFocus : true
+			selectOnFocus : true,
+			listeners:{'select':function(record){
+			      Ext.getCmp("glueSource").setValue(this.getValue());
+			     Ext.getCmp('glueRemark').setValue(this.getRawValue());
+			}}
+			
 		}],
-        html:"<textarea id='glueSource' style='width:100%;height:100%'></textarea>",
+		items:[{
+		  xtype:'textarea',autoScroll:true,width : '80%', height:'60%',fieldLabel:'源代码内容',id:"glueSource",name:'glueSource'
+		}],
         buttons: [
             {
                 text: '关闭',
